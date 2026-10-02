@@ -1,13 +1,13 @@
-# Neovim config
+# Donnell's Neovim Config
 
-Minimal Neovim 0.12+ config using `vim.pack`, `mini.nvim`, and the VS Code Light colorscheme. Save `init.lua` to `~/.config/nvim/init.lua`. Use Git for package installation and Git commands, ripgrep (`rg`) for project search, and a Nerd Font for icons.
+My minimal Neovim 0.12+ config using `vim.pack`, `mini.nvim`, and the VS Code Light colorscheme. Use :Git for package installation and :Git commands, ripgrep (`:rg`) for project search, and a **Nerd Font** for icons.
 
-To install Neovim:
+**To install Neovim**:
 ```
 mkdir -p "$HOME/.local" && curl -fsSL https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz | tar -xz -C "$HOME/.local" && export PATH="$HOME/.local/nvim-linux-x86_64/bin:$PATH" && { grep -qxF 'export PATH="$HOME/.local/nvim-linux-x86_64/bin:$PATH"' "$HOME/.bashrc" 2>/dev/null || printf '\nexport PATH="$HOME/.local/nvim-linux-x86_64/bin:$PATH"\n' >> "$HOME/.bashrc"; }
 ```
 
-To install this config:
+**To install this config**:
 ```
 curl -fsSL https://raw.githubusercontent.com/donnell-f/donnell_nvim_config/main/install.sh | bash
 ```
@@ -33,12 +33,24 @@ In the file explorer, use `j`/`k` to move, `l` to open a file or directory, `h` 
 
 | Command | Action |
 | --- | --- |
-| `nvim .` | From a terminal, open the current directory in the file explorer |
-| `:cd /path/to/project` | Set the working directory used by file and text searches |
-| `:Git diff` | Show unstaged Git changes |
-| `:lua vim.pack.update()` | Check installed packages for updates and review them |
-| `:help mini.files` | Read the file explorer documentation |
-| `:help mini.pick` | Read the fuzzy finder documentation |
+| `:Git status` | Show the branch and staged, unstaged, and untracked files |
+| `:Git diff` | Show unstaged changes |
+| `:Git diff --cached` | Show staged changes |
+| `:Git add -- %` | Stage the current file |
+| `:Git add -- path/to/file` | Stage a specific file |
+| `:Git add -A` | Stage all changes in the repository, including deletions |
+| `:Git restore --staged -- %` | Unstage the current file while keeping its edits |
+| `:Git commit -m "Describe the change"` | Commit staged changes |
+| `:Git log --oneline --graph --decorate -n 20` | Show the latest 20 commits with branch labels |
+| `:Git blame -- %` | Show who last changed each line of the current file |
+| `:Git branch` | List local branches |
+| `:Git switch -c new-branch` | Create and switch to a new branch |
+| `:Git switch branch-name` | Switch to an existing branch |
+| `:Git fetch` | Download remote updates without changing your working files |
+| `:Git pull --ff-only` | Update from the upstream branch only if no merge is needed |
+| `:Git push` | Push commits to the configured upstream branch |
+| `:Git push -u origin HEAD` | Push the current branch to `origin` and set its upstream |
+| `:help mini.git` | Read the Git integration documentation |
 
 VS Code Light loads automatically on startup.
 
