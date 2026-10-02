@@ -33,6 +33,11 @@ In the file explorer, use `j`/`k` to move, `l` to open a file or directory, `h` 
 
 | Command | Action |
 | --- | --- |
+| `nvim .` | From a terminal, open the current directory in the file explorer |
+| `:cd /path/to/project` | Set the working directory used by file and text searches |
+| `:lua vim.pack.update()` | Check installed packages for updates and review them |
+| `:help mini.files` | Read the file explorer documentation |
+| `:help mini.pick` | Read the fuzzy finder documentation |
 | `:Git status` | Show the branch and staged, unstaged, and untracked files |
 | `:Git diff` | Show unstaged changes |
 | `:Git diff --cached` | Show staged changes |
@@ -51,6 +56,4 @@ In the file explorer, use `j`/`k` to move, `l` to open a file or directory, `h` 
 | `:Git push` | Push commits to the configured upstream branch |
 | `:Git push -u origin HEAD` | Push the current branch to `origin` and set its upstream |
 | `:help mini.git` | Read the Git integration documentation |
-
-VS Code Light loads automatically on startup.
 
